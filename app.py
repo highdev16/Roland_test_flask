@@ -3,10 +3,10 @@ from flask import Flask, request, jsonify, render_template
 from firebase_admin import credentials, firestore, initialize_app
 import time
 
-app=Flask(__name__,template_folder='Template')
+app=Flask(__name__,template_folder='template')
 
 
-cred = credentials.Certificate('testproject-9eb88-firebase-adminsdk-1bp4r-da4caf7572.json')
+cred = credentials.Certificate('firebase.json')
 default_app = initialize_app(cred)
 db = firestore.client()
 todo_ref = db.collection('todos')

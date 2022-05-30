@@ -13,7 +13,7 @@ todo_ref = db.collection('todos')
 
 @app.route("/request", methods=['POST'])
 def process_request():
-    timestr = time.strftime('%Y_%H_%M_%H_%m_%S')
+    timestr = time.strftime('%Y_%m_%d_%H_%M_%S')
     value = request.json['value']
     todo_ref.document(timestr).set(request.json)
     
